@@ -90,7 +90,7 @@
         tools:textColor="@android:color/white" />
 
     <ListView
-        android:id="@+id/listview_siteList"
+        android:id="@+id/listview_lootList"
         android:layout_width="306dp"
         android:layout_height="201dp"
         android:layout_marginStart="8dp"

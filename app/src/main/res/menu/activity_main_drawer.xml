@@ -1,37 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/profile"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="View Character Profile" />
-        <item
-            android:id="@+id/npc_generator"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="NPC Generator" />
-        <item
-            android:id="@+id/venue_generator"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Venue Generator" />
-        <item
-            android:id="@+id/loot_generator"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Loot Generator" />
-        <item
-            android:id="@+id/faction_generator"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Faction Generator" />
-        <item
-            android:id="@+id/enemy_generator"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Enemy Generator" />
-        <item
-            android:id="@+id/wiki_spells_weapons"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Wiki of Spells and Weapons" />
-    </group>
+    <item android:title="Character Profile">
+        <menu>
+        <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/profile_npc"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="NPC Profile" />
+            <item
+                android:id="@+id/profile_faction"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Faction Profile" />
+            <item
+                android:id="@+id/profile_venue"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Venue Profile" />
+            <item
+                android:id="@+id/profile_loot"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Loot Profile" />
+            <item
+                android:id="@+id/profile_enemy_encounters"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Enemey Encounters" />
 
+        </group>
+        </menu>
+    </item>
+
+    <item android:title="Generator">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/npc_generator"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="NPC Generator" />
+            <item
+                android:id="@+id/venue_generator"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="Venue Generator" />
+            <item
+                android:id="@+id/loot_generator"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Loot Generator" />
+            <item
+                android:id="@+id/faction_generator"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Faction Generator" />
+
+                <item
+                    android:id="@+id/enemy_generator"
+                    android:icon="@drawable/icon_enemy"
+                    android:title="Enemy Generator"
+                    android:visible="true" />
+            <item
+                android:id="@+id/wiki_spells_weapons"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Wiki of Spells and Weapons" />
+            </group>
+        </menu>
+    </item>
 </menu>
