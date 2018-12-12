@@ -6,29 +6,28 @@
 
     <item android:title="Character Profile">
         <menu>
-        <group android:checkableBehavior="single">
-            <item
-                android:id="@+id/profile_npc"
-                android:icon="@drawable/ic_menu_camera"
-                android:title="NPC Profile" />
-            <item
-                android:id="@+id/profile_faction"
-                android:icon="@drawable/ic_menu_camera"
-                android:title="Faction Profile" />
-            <item
-                android:id="@+id/profile_venue"
-                android:icon="@drawable/ic_menu_camera"
-                android:title="Venue Profile" />
-            <item
-                android:id="@+id/profile_loot"
-                android:icon="@drawable/ic_menu_camera"
-                android:title="Loot Profile" />
-            <item
-                android:id="@+id/profile_enemy_encounters"
-                android:icon="@drawable/ic_menu_camera"
-                android:title="Enemey Encounters" />
-
-        </group>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/profile_npc"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="NPC Profile" />
+                <item
+                    android:id="@+id/profile_faction"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Faction Profile" />
+                <item
+                    android:id="@+id/profile_venue"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Venue Profile" />
+                <item
+                    android:id="@+id/profile_loot"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Loot Profile" />
+                <item
+                    android:id="@+id/profile_enemy_encounters"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Enemey Encounters" />
+            </group>
         </menu>
     </item>
 
@@ -37,30 +36,29 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/npc_generator"
-                    android:icon="@drawable/ic_menu_camera"
+                    android:icon="@drawable/icon_npc"
                     android:title="NPC Generator" />
-            <item
-                android:id="@+id/venue_generator"
-                android:icon="@drawable/ic_menu_gallery"
-                android:title="Venue Generator" />
-            <item
-                android:id="@+id/loot_generator"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="Loot Generator" />
-            <item
-                android:id="@+id/faction_generator"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="Faction Generator" />
-
+                <item
+                    android:id="@+id/venue_generator"
+                    android:icon="@drawable/icon_venue"
+                    android:title="Venue Generator" />
+                <item
+                    android:id="@+id/loot_generator"
+                    android:icon="@drawable/icon_loot"
+                    android:title="Loot Generator" />
+                <item
+                    android:id="@+id/faction_generator"
+                    android:icon="@drawable/icon_faction"
+                    android:title="Faction Generator" />
                 <item
                     android:id="@+id/enemy_generator"
                     android:icon="@drawable/icon_enemy"
                     android:title="Enemy Generator"
                     android:visible="true" />
-            <item
-                android:id="@+id/wiki_spells_weapons"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="Wiki of Spells and Weapons" />
+                <item
+                    android:id="@+id/wiki_spells_weapons"
+                    android:icon="@drawable/icon_wiki"
+                    android:title="Wiki of Spells and Weapons" />
             </group>
         </menu>
     </item>
