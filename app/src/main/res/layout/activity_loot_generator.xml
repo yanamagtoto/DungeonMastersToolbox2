@@ -8,7 +8,7 @@
     android:background="@drawable/dndbg">
 
     <Button
-        android:id="@+id/btn_loo"
+        android:id="@+id/btn_randomDrop"
         android:layout_width="134dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
@@ -28,7 +28,7 @@
         app:layout_constraintVertical_bias="0.266" />
 
     <Button
-        android:id="@+id/btn_loot_chest"
+        android:id="@+id/btn_treasureHoard"
         android:layout_width="134dp"
         android:layout_height="46dp"
         android:layout_marginStart="8dp"
@@ -117,7 +117,7 @@
         app:layout_constraintVertical_bias="0.161" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText_lootCR"
         android:layout_width="146dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -135,7 +135,7 @@
         app:layout_constraintVertical_bias="0.133" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtview_loot"
         android:layout_width="281dp"
         android:layout_height="200dp"
         android:layout_marginStart="8dp"
@@ -143,7 +143,6 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorAccent"
-        android:text="test"
         android:textAlignment="center"
         android:textColor="@color/borderColor"
         android:textSize="18sp"
