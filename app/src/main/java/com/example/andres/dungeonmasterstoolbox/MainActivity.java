@@ -92,6 +92,23 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.mini_wiki) {
             Intent intent = new Intent(this, MiniWiki.class);
             startActivity(intent);
+
+        } else if (id == R.id.saved_npc) {
+            Intent intent = new Intent(this, SavedNPC.class);
+            startActivity(intent);
+
+        } else if (id == R.id.saved_factionName) {
+            Intent intent = new Intent(this, SavedFactionName.class);
+            startActivity(intent);
+
+        } else if (id == R.id.saved_venue) {
+            Intent intent = new Intent(this, SavedVenue.class);
+            startActivity(intent);
+
+        } else if (id == R.id.saved_loot) {
+            Intent intent = new Intent(this, SavedLoot.class);
+            startActivity(intent);
+
         }
 
         drawer.closeDrawer(GravityCompat.START);
