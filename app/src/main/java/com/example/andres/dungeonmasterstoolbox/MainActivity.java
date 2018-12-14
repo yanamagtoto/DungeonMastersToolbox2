@@ -1,5 +1,6 @@
 package com.example.andres.dungeonmasterstoolbox;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -70,22 +71,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.npc_generator) {
-            setContentView(R.layout.activity_npc_generator);
-
+            Intent intent = new Intent(this, NPCGenerator.class);
+            startActivity(intent);
         } else if (id == R.id.venue_generator) {
-            setContentView(R.layout.activity_venue_generator);
 
         } else if (id == R.id.loot_generator) {
-            setContentView(R.layout.activity_loot_generator);
 
         } else if (id == R.id.faction_generator) {
-            setContentView(R.layout.activity_faction_name_generator);
 
-        } else if (id == R.id.enemy_generator) {
-            setContentView(R.layout.activity_encounter_generator);
+        } else if (id == R.id.encounter_generator) {
 
-        } else if (id == R.id.wiki_spells_weapons) {
-            setContentView(R.layout.activity_wiki_home);
+        } else if (id == R.id.mini_wiki) {
         }
 
         drawer.closeDrawer(GravityCompat.START);
