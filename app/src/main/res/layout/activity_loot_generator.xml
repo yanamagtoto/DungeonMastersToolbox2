@@ -10,8 +10,8 @@
     <Button
         android:id="@+id/btn_randomDrop"
         android:layout_width="134dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
@@ -21,19 +21,17 @@
         android:textColor="@android:color/background_light"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintEnd_toStartOf="@+id/btn_treasureHoard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.266" />
+        app:layout_constraintVertical_bias="0.261" />
 
     <Button
         android:id="@+id/btn_treasureHoard"
         android:layout_width="134dp"
         android:layout_height="46dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="8dp"
         android:background="#483d8b"
         android:fontFamily="@font/font_korrina_bold"
@@ -42,18 +40,17 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.82"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintVertical_bias="0.26" />
 
     <Button
         android:id="@+id/btn_loot_save"
         android:layout_width="283dp"
         android:layout_height="38dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="40dp"
         android:background="@android:color/holo_blue_dark"
         android:fontFamily="@font/font_korrina_bold"
         android:text="Save  Loot"
@@ -62,7 +59,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtview_loot" />
 
     <TextView
         android:id="@+id/txtview_title_loot"
@@ -106,33 +104,31 @@
         android:id="@+id/txtview_loot_category2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="8dp"
         android:text="Loot CR:"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintEnd_toStartOf="@+id/editText_lootCR"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText_lootCR"
         android:layout_width="146dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="52dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="enter number from 1-20"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintVertical_bias="0.005" />
 
     <TextView
         android:id="@+id/txtview_loot"

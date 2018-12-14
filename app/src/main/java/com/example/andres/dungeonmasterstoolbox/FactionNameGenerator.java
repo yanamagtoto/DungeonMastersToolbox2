@@ -3,12 +3,9 @@ package com.example.andres.dungeonmasterstoolbox;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class EncounterGenerator extends AppCompatActivity {
-
+public class FactionNameGenerator extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_encounter_generator);
+        setContentView(R.layout.activity_faction_name_generator);
     }
-
-
 }

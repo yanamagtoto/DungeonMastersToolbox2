@@ -74,14 +74,24 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, NPCGenerator.class);
             startActivity(intent);
         } else if (id == R.id.venue_generator) {
+            Intent intent = new Intent(this, VenueGenerator.class);
+            startActivity(intent);
 
         } else if (id == R.id.loot_generator) {
+            Intent intent = new Intent(this, LootGenerator.class);
+            startActivity(intent);
 
         } else if (id == R.id.faction_generator) {
+            Intent intent = new Intent(this, FactionNameGenerator.class);
+            startActivity(intent);
 
         } else if (id == R.id.encounter_generator) {
+            Intent intent = new Intent(this, EncounterGenerator.class);
+            startActivity(intent);
 
         } else if (id == R.id.mini_wiki) {
+            Intent intent = new Intent(this, MiniWiki.class);
+            startActivity(intent);
         }
 
         drawer.closeDrawer(GravityCompat.START);
