@@ -8,7 +8,7 @@
     android:background="@drawable/dndbg">
 
     <Button
-        android:id="@+id/btn_npc_generate"
+        android:id="@+id/btn_venue_generate"
         android:layout_width="128dp"
         android:layout_height="43dp"
         android:layout_marginStart="8dp"
@@ -31,7 +31,6 @@
         android:layout_width="264dp"
         android:layout_height="37dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
         android:background="@android:color/holo_blue_dark"
@@ -42,9 +41,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.413"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listview_siteList"
-        app:layout_constraintVertical_bias="0.983" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtview_venueName"
@@ -86,14 +83,14 @@
         app:layout_constraintVertical_bias="0.129" />
 
     <TextView
-        android:id="@+id/venue_label_placeName2"
+        android:id="@+id/venue_label_venue_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Housing (to be changed)"
+        android:text="Venue Shops:"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -128,19 +125,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ListView
-        android:id="@+id/listview_siteList"
-        android:layout_width="300dp"
-        android:layout_height="164dp"
+    <TextView
+        android:id="@+id/txt_view_venue_details"
+        android:layout_width="320dp"
+        android:layout_height="200dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/colorAccent"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.613" />
+        app:layout_constraintVertical_bias="0.715" />
 
 </android.support.constraint.ConstraintLayout>
