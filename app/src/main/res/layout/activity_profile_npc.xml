@@ -100,14 +100,14 @@
         app:layout_constraintVertical_bias="0.177" />
 
     <TextView
-        android:id="@+id/npc_label_class3"
+        android:id="@+id/npc_label_sex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="CLASS"
+        android:text="SEX"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -221,7 +221,7 @@
         android:layout_marginBottom="8dp"
         android:background="@color/colorAccent"
         android:lineSpacingExtra="8sp"
-        android:text="Class here"
+        android:text="Sex here"
         android:textAlignment="center"
         android:textColor="#361f25"
         android:textSize="24sp"

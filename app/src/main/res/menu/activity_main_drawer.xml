@@ -8,25 +8,21 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/profile_npc"
+                    android:id="@+id/saved_npc"
                     android:icon="@drawable/ic_menu_camera"
-                    android:title="NPC Profile" />
+                    android:title="Saved NPC" />
                 <item
-                    android:id="@+id/profile_faction"
+                    android:id="@+id/saved_factionName"
                     android:icon="@drawable/ic_menu_camera"
-                    android:title="Faction Profile" />
+                    android:title="Saved Faction Name" />
                 <item
-                    android:id="@+id/profile_venue"
+                    android:id="@+id/saved_venue"
                     android:icon="@drawable/ic_menu_camera"
-                    android:title="Venue Profile" />
+                    android:title="Saved Venue " />
                 <item
-                    android:id="@+id/profile_loot"
+                    android:id="@+id/saved_loot"
                     android:icon="@drawable/ic_menu_camera"
-                    android:title="Loot Profile" />
-                <item
-                    android:id="@+id/profile_enemy_encounters"
-                    android:icon="@drawable/ic_menu_camera"
-                    android:title="Enemey Encounters" />
+                    android:title="Saved Loot" />
             </group>
         </menu>
     </item>
@@ -51,14 +47,14 @@
                     android:icon="@drawable/icon_faction"
                     android:title="Faction Generator" />
                 <item
-                    android:id="@+id/enemy_generator"
+                    android:id="@+id/encounter_generator"
                     android:icon="@drawable/icon_enemy"
-                    android:title="Enemy Generator"
+                    android:title="Encounter Generator"
                     android:visible="true" />
                 <item
-                    android:id="@+id/wiki_spells_weapons"
+                    android:id="@+id/mini_wiki"
                     android:icon="@drawable/icon_wiki"
-                    android:title="Wiki of Spells and Weapons" />
+                    android:title="Mini Wiki" />
             </group>
         </menu>
     </item>

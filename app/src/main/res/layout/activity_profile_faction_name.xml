@@ -8,9 +8,9 @@
     android:background="@drawable/dndbg">
 
     <TextView
-        android:id="@+id/tv_design3"
-        android:layout_width="354dp"
-        android:layout_height="407dp"
+        android:id="@+id/tv_design2"
+        android:layout_width="339dp"
+        android:layout_height="199dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -18,18 +18,18 @@
         android:background="#d4c4bb"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintVertical_bias="0.201" />
 
     <TextView
-        android:id="@+id/txtView_home_lbl4"
+        android:id="@+id/txtView_home_lbl3"
         style="@style/ThemeOverlay.AppCompat.Dialog"
         android:layout_width="300dp"
         android:layout_height="42dp"
         android:background="#0a6241"
-        android:text="Enemy Encounters"
+        android:text="Faction Name Profile"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/colorAccent"
@@ -37,13 +37,12 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.117" />
 
     <TextView
-        android:id="@+id/txtview_profile_enemyName"
+        android:id="@+id/txtview_profile_factionName"
         android:layout_width="265dp"
         android:layout_height="33dp"
         android:layout_marginStart="8dp"
@@ -58,36 +57,6 @@
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
-
-    <TextView
-        android:id="@+id/txtview_profile_description"
-        android:layout_width="264dp"
-        android:layout_height="147dp"
-        android:text="Description here"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684" />
-
-    <ImageView
-        android:id="@+id/imgview_profile_enemy"
-        android:layout_width="190dp"
-        android:layout_height="152dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/colorAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163"
-        app:srcCompat="@drawable/enemy_logo_beast" />
+        app:layout_constraintVertical_bias="0.266" />
 
 </android.support.constraint.ConstraintLayout>

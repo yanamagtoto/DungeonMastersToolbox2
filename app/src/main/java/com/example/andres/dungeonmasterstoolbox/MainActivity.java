@@ -1,9 +1,6 @@
 package com.example.andres.dungeonmasterstoolbox;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -82,10 +79,10 @@ public class MainActivity extends AppCompatActivity
             setContentView(R.layout.activity_loot_generator);
 
         } else if (id == R.id.faction_generator) {
-            setContentView(R.layout.activity_faction_generator);
+            setContentView(R.layout.activity_faction_name_generator);
 
         } else if (id == R.id.enemy_generator) {
-            setContentView(R.layout.activity_enemy_generator);
+            setContentView(R.layout.activity_encounter_generator);
 
         } else if (id == R.id.wiki_spells_weapons) {
             setContentView(R.layout.activity_wiki_home);
