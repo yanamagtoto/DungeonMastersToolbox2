@@ -129,7 +129,7 @@ public class NPCGenerator extends AppCompatActivity {
 
         Random rand = new Random();
 
-        int n = rand.nextInt(9) ;
+        int n = rand.nextInt(occupations.length) ;
 
         occupation = occupations[n];
 
