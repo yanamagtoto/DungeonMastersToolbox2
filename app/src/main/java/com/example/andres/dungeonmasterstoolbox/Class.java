@@ -1,6 +1,7 @@
 package com.example.andres.dungeonmasterstoolbox;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -15,11 +16,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import org.w3c.dom.Text;
 
-public class Class extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import java.util.ArrayList;
 
-    DrawerLayout drawer;
+public class Class extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    TextView listOfNames;
+    DBHelper myDB;
+
+    DrawerLayout drawer; //WHAT I DID IDK IF ITS CORRECT SAM :-(((
     Button barbarian;
     Button bard;
     Button cleric;
@@ -34,7 +41,7 @@ public class Class extends AppCompatActivity implements NavigationView.OnNavigat
     Button wizard;
     TextView className;
     TextView classDescription;
-    ImageView barbarian_Image; //im vovo is this right?????
+    ImageView barbarian_Image;
     ImageView bard_Image;
     ImageView cleric_Image;
     ImageView druid_Image;
@@ -104,7 +111,27 @@ public class Class extends AppCompatActivity implements NavigationView.OnNavigat
         });
     }
 
+    public void appendDatabaseItemsToList(){
 
+        Cursor res = myDB.getAllFromSavedFactions();
+        ArrayList<String> factionNames = new ArrayList<>();
+
+        if(res.getCount() == 0) {
+            Toast.makeText(this, "THERES BLLOODY NOTHING", Toast.LENGTH_SHORT).show();
+            return;
+        }else{
+            while (res.moveToNext()) {
+                factionNames.add(res.getString(1));
+            }
+        }
+
+        for(int i = 0; i < factionNames.size(); i++){
+            listOfNames.append(factionNames.get(i));
+            listOfNames.append("\n\r");
+        }
+
+
+    }
 
     @Override
     public void onBackPressed() {
