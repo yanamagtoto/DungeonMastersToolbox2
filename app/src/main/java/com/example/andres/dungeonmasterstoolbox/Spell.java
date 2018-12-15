@@ -11,9 +11,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 
 public class Spell extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    ImageButton btn_spell_sorcerer;
+    ImageButton btn_spell_bard;
+    ImageButton btn_spell_wizard;
+    ImageButton btn_spell_warlock;
+    ImageButton btn_spell_druid;
+    ImageButton btn_spell_cleric;
     DrawerLayout drawer;
 
     protected void onCreate (Bundle savedInstanceState) {
@@ -111,5 +117,10 @@ public class Spell extends AppCompatActivity implements NavigationView.OnNavigat
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void initializeButtons(){
+
+
     }
 }

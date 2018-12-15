@@ -1,6 +1,7 @@
 package com.example.andres.dungeonmasterstoolbox;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -9,10 +10,18 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class SavedFactionName extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    TextView listOfNames;
+    DBHelper myDB;
 
     DrawerLayout drawer;
 
@@ -32,6 +41,14 @@ public class SavedFactionName extends AppCompatActivity implements NavigationVie
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        initialize();
+        myDB = new DBHelper(this);
+        appendDatabaseItemsToList();
+
+
+
+
     }
 
     @Override
@@ -110,5 +127,37 @@ public class SavedFactionName extends AppCompatActivity implements NavigationVie
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void  initialize(){
+        listOfNames =  this.findViewById(R.id.txtview_saved_factionNames);
+        listOfNames.setMovementMethod(new ScrollingMovementMethod());
+
+
+
+
+
+    }
+
+    public void appendDatabaseItemsToList(){
+
+        Cursor res = myDB.getAllFromSavedFactions();
+        ArrayList<String> factionNames = new ArrayList<>();
+
+        if(res.getCount() == 0) {
+            Toast.makeText(this, "THERES BLLOODY NOTHING", Toast.LENGTH_SHORT).show();
+            return;
+        }else{
+            while (res.moveToNext()) {
+              factionNames.add(res.getString(1));
+            }
+        }
+
+        for(int i = 0; i < factionNames.size(); i++){
+            listOfNames.append(factionNames.get(i));
+            listOfNames.append("\n\r");
+        }
+
+
     }
 }
