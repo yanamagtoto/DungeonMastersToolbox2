@@ -9,15 +9,15 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/saved_npc"
-                    android:icon="@drawable/ic_menu_camera"
+                    android:icon="@drawable/icon_npc"
                     android:title="Saved NPC" />
                 <item
                     android:id="@+id/saved_factionName"
-                    android:icon="@drawable/ic_menu_camera"
+                    android:icon="@drawable/icon_faction"
                     android:title="Saved Faction Name" />
                 <item
                     android:id="@+id/saved_venue"
-                    android:icon="@drawable/ic_menu_camera"
+                    android:icon="@drawable/icon_venue"
                     android:title="Saved Venue " />
             </group>
         </menu>
