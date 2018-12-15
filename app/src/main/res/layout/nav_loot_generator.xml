@@ -99,7 +99,6 @@
         android:id="@+id/txtview_loot"
         android:layout_width="281dp"
         android:layout_height="200dp"
-        android:scrollbars = "vertical"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
