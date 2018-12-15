@@ -11,23 +11,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
-public class MiniWiki extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Spell extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawer;
-    Button spells;
-    Button weapons;
-    Button armors;
-    Button factions;
-    Button classes;
-
 
     protected void onCreate (Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wiki_home);
+        //NOTE FOR SAM: I THINK THIS IS WHERE YOU PUT THE THING YOU SAID ABOUT EXTRAS (for transitioning from 1st screen to 2nd then 3rd screen)
 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_wiki_spells_filter); // !! --- IMPORTANT
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -40,54 +33,6 @@ public class MiniWiki extends AppCompatActivity implements NavigationView.OnNavi
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        spells = (Button) findViewById(R.id.btn_wiki_spell);
-        weapons = (Button) findViewById(R.id.btn_wiki_weapon);
-        armors = (Button) findViewById(R.id.btn_wiki_armor);
-        factions = (Button) findViewById(R.id.btn_wiki_faction);
-        classes = (Button) findViewById(R.id.btn_wiki_class);
-
-
-        spells.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent spell_activity = new Intent(MiniWiki.this, Spell.class);
-                startActivity(spell_activity);
-            }
-        });
-
-        weapons.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent weapon_activity = new Intent(MiniWiki.this, Weapon.class);
-                startActivity(weapon_activity);
-            }
-        });
-
-        armors.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent armor_activity = new Intent(MiniWiki.this, Armor.class);
-                startActivity(armor_activity);
-            }
-        });
-
-        factions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent faction_activity = new Intent(MiniWiki.this, Faction.class);
-                startActivity(faction_activity);
-            }
-        });
-
-        classes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent class_activity = new Intent(MiniWiki.this, Class.class);
-                startActivity(class_activity);
-            }
-        });
-
     }
 
     @Override
@@ -123,7 +68,7 @@ public class MiniWiki extends AppCompatActivity implements NavigationView.OnNavi
 
     @Override
     @SuppressWarnings("StatementWithEmptyBody")
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
