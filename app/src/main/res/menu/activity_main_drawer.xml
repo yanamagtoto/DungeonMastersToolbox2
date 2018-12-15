@@ -19,10 +19,6 @@
                     android:id="@+id/saved_venue"
                     android:icon="@drawable/ic_menu_camera"
                     android:title="Saved Venue " />
-                <item
-                    android:id="@+id/saved_loot"
-                    android:icon="@drawable/ic_menu_camera"
-                    android:title="Saved Loot" />
             </group>
         </menu>
     </item>
