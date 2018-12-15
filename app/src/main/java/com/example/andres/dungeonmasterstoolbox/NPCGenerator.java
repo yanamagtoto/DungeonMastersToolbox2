@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -57,16 +58,30 @@ public class NPCGenerator extends AppCompatActivity {
         save = findViewById(R.id.btn_npc_save);
         save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                saveNPC(mydb);
+                saveNPC();
 
             }
         });
 
     }
 
-    public void saveNPC(DBHelper mydb){
+    public void saveNPC(){
 
-        //mydb.insertIntoNPC();
+        int sex;
+        if(sexView.getText().toString().equals("Male")){
+            sex = 0; //male
+        }else{
+            sex = 1; //female
+        }
+
+        boolean isSuccess = this.mydb.insertIntoNPC(npcNameView.getText().toString(), sex, raceView.getText().toString(), occupationView.getText().toString(),
+                alignmentView.getText().toString());
+
+        if(isSuccess){
+            Toast.makeText(this, "Sucessfully Saved!",
+                    Toast.LENGTH_LONG).show();
+        }
+
 
     }
 
