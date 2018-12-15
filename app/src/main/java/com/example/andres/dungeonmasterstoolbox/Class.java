@@ -11,10 +11,42 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.w3c.dom.Text;
 
 public class Class extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawer;
+    Button barbarian;
+    Button bard;
+    Button cleric;
+    Button druid;
+    Button fighter;
+    Button monk;
+    Button paladin;
+    Button ranger;
+    Button rogue;
+    Button sorcerer;
+    Button warlock;
+    Button wizard;
+    TextView className;
+    TextView classDescription;
+    ImageView barbarian_Image; //im vovo is this right?????
+    ImageView bard_Image;
+    ImageView cleric_Image;
+    ImageView druid_Image;
+    ImageView fighter_Image;
+    ImageView monk_Image;
+    ImageView paladin_Image;
+    ImageView ranger_Image;
+    ImageView rogue_Image;
+    ImageView sorcerer_Image;
+    ImageView warlock_Image;
+    ImageView wizard_Image;
+
 
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +63,48 @@ public class Class extends AppCompatActivity implements NavigationView.OnNavigat
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        barbarian = (Button) findViewById(R.id.btn_barbarian);
+        bard = (Button) findViewById(R.id.btn_bard);
+        cleric = (Button) findViewById(R.id.btn_cleric);
+        druid = (Button) findViewById(R.id.btn_druid);
+        fighter = (Button) findViewById(R.id.btn_fighter);
+        monk = (Button) findViewById(R.id.btn_monk);
+        paladin = (Button) findViewById(R.id.btn_paladin);
+        ranger = (Button) findViewById(R.id.btn_ranger);
+        rogue = (Button) findViewById(R.id.btn_rogue);
+        sorcerer = (Button) findViewById(R.id.btn_sorcerer);
+        warlock = (Button) findViewById(R.id.btn_warlock);
+        wizard = (Button) findViewById(R.id.btn_wizard);
+        className = (TextView) findViewById(R.id.txtview_className);
+        classDescription = (TextView) findViewById(R.id.txtview_description);
+        barbarian_Image.setImageResource(R.drawable.class_logo_barbarian);
+        bard_Image.setImageResource(R.drawable.class_logo_bard);
+        cleric_Image.setImageResource(R.drawable.class_logo_cleric);
+        druid_Image.setImageResource(R.drawable.class_logo_druid);
+        fighter_Image.setImageResource(R.drawable.class_logo_fighter);
+        monk_Image.setImageResource(R.drawable.class_logo_monk);
+        paladin_Image.setImageResource(R.drawable.class_logo_paladin);
+        ranger_Image.setImageResource(R.drawable.class_logo_ranger);
+        rogue_Image.setImageResource(R.drawable.class_logo_rogue);
+        sorcerer_Image.setImageResource(R.drawable.class_logo_sorcerer);
+        warlock_Image.setImageResource(R.drawable.class_logo_warlock);
+        wizard_Image.setImageResource(R.drawable.class_logo_wizard);
+
+        initialize();
+
     }
+
+    public void initialize () {
+        barbarian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+    }
+
+
 
     @Override
     public void onBackPressed() {
