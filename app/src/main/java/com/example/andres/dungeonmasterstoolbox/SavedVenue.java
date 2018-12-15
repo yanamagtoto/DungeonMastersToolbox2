@@ -1,6 +1,7 @@
 package com.example.andres.dungeonmasterstoolbox;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -9,11 +10,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class SavedVenue extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    TextView savedVenues;
     DrawerLayout drawer;
 
     protected void onCreate (Bundle savedInstanceState) {
@@ -32,6 +38,9 @@ public class SavedVenue extends AppCompatActivity implements NavigationView.OnNa
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        initialize();
+        appendDatabaseItemsToList();
     }
 
     @Override
@@ -109,5 +118,37 @@ public class SavedVenue extends AppCompatActivity implements NavigationView.OnNa
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void  initialize(){
+        savedVenues =  this.findViewById(R.id.txtview_saved_venues);
+        savedVenues.setMovementMethod(new ScrollingMovementMethod());
+
+
+
+
+    }
+
+    public void appendDatabaseItemsToList(){
+        DBHelper myDB = new DBHelper(this);
+
+        Cursor res = myDB.getAllFromVenue();
+
+        if(res.getCount() == 0) {
+            Toast.makeText(this, "THERES BLLOODY NOTHING", Toast.LENGTH_SHORT).show();
+            return;
+        }else{
+            while (res.moveToNext()) {
+                savedVenues.append("Name: ");
+                savedVenues.append(res.getString(1));
+                savedVenues.append("\n\r");
+                savedVenues.append("Shops: ");
+                savedVenues.append(res.getString(2));
+                savedVenues.append("\n\r");
+                savedVenues.append("\n\r");
+            }
+        }
+
+
     }
 }
