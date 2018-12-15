@@ -1,6 +1,7 @@
 package com.example.andres.dungeonmasterstoolbox;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -9,25 +10,22 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class Spell extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    ImageButton btn_spell_sorcerer;
-    ImageButton btn_spell_bard;
-    ImageButton btn_spell_wizard;
-    ImageButton btn_spell_warlock;
-    ImageButton btn_spell_druid;
-    ImageButton btn_spell_cleric;
+public class SpellList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    TextView spellist;
     DrawerLayout drawer;
 
     protected void onCreate (Bundle savedInstanceState) {
-        //NOTE FOR SAM: I THINK THIS IS WHERE YOU PUT THE THING YOU SAID ABOUT EXTRAS (for transitioning from 1st screen to 2nd then 3rd screen)
+
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wiki_spells_filter); // !! --- IMPORTANT
+        setContentView(R.layout.activity_wiki_spell_list); // !! --- IMPORTANT
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -41,7 +39,7 @@ public class Spell extends AppCompatActivity implements NavigationView.OnNavigat
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        initializeButtons();
+
 
     }
 
@@ -124,64 +122,41 @@ public class Spell extends AppCompatActivity implements NavigationView.OnNavigat
     }
 
     public void initializeButtons(){
-        btn_spell_bard = findViewById(R.id.btn_spell_bard);
-        btn_spell_bard.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent i = new Intent(Spell.this, SpellList.class);
-                i.putExtra("filter", "bard");
-                startActivity(i);
+        spellist = findViewById(R.id.txtview_spellList);
+        spellist.setMovementMethod(new ScrollingMovementMethod());
+    }
 
+    public void appendDatabaseItemsToList(){
+        DBHelper myDB = new DBHelper(this);
+
+        Cursor res = myDB.getAllFromSpells();
+
+        if(res.getCount() == 0) {
+            Toast.makeText(this, "THERES BLLOODY NOTHING", Toast.LENGTH_SHORT).show();
+            return;
+
+        }else{
+            while (res.moveToNext()) {
+                spellist.append("Name: ");
+                spellist.append(res.getString(1));
+                spellist.append("\n\r");
+                spellist.append("Level: ");
+                spellist.append(res.getString(2));
+                spellist.append("Description: ");
+                spellist.append(res.getString(3));
+                spellist.append("Casting Time: ");
+                spellist.append(res.getString(4));
+                spellist.append("Range: ");
+                spellist.append(res.getString(5));
+                spellist.append("Components: ");
+                spellist.append(res.getString(6));
+                spellist.append("Duration: ");
+                spellist.append(res.getString(7));
+                spellist.append("\n\r");
+                spellist.append("\n\r");
             }
-        });
+        }
 
-        btn_spell_cleric = findViewById(R.id.btn_spell_cleric);
-        btn_spell_cleric.setOnClickListener(new View.OnClickListener() {
-        public void onClick(View v) {
-            Intent i = new Intent(Spell.this, SpellList.class);
-            i.putExtra("filter", "cleric");
-            startActivity(i);
 
-            }
-        });
-
-        btn_spell_wizard = findViewById(R.id.btn_spell_wizard);
-        btn_spell_wizard.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent i = new Intent(Spell.this, SpellList.class);
-                i.putExtra("filter", "wizard");
-                startActivity(i);
-
-            }
-        });
-
-        btn_spell_warlock = findViewById(R.id.btn_spell_warlock);
-        btn_spell_warlock.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent i = new Intent(Spell.this, SpellList.class);
-                i.putExtra("filter", "warlock");
-                startActivity(i);
-
-            }
-        });
-
-        btn_spell_druid= findViewById(R.id.btn_spell_druid);
-        btn_spell_druid.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent i = new Intent(Spell.this, SpellList.class);
-                i.putExtra("filter", "druid");
-                startActivity(i);
-
-            }
-        });
-
-        btn_spell_sorcerer = findViewById(R.id.btn_spell_sorcerer);
-        btn_spell_sorcerer.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent i = new Intent(Spell.this, SpellList.class);
-                i.putExtra("filter", "sorcerer");
-                startActivity(i);
-
-            }
-        });
     }
 }
