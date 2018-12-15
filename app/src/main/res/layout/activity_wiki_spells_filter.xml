@@ -8,6 +8,20 @@
     android:background="@drawable/dndbg">
 
     <TextView
+        android:id="@+id/txtview_lbl_dru2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Druid"
+        android:textColor="@color/borderColor"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.459" />
+
+    <TextView
         android:id="@+id/txtview_lbl_brd2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,7 +30,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintHorizontal_bias="0.256"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.459" />
@@ -30,7 +44,6 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.459" />
@@ -98,13 +111,13 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.678" />
 
     <ImageButton
-        android:id="@+id/btn_sorcerer2"
+        android:id="@+id/btn_spell_sorcerer"
         android:layout_width="57dp"
         android:layout_height="57dp"
         android:background="?selectableItemBackgroundBorderless"
@@ -120,7 +133,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/btn_cleric2"
+        android:id="@+id/btn_spell_cleric"
         android:layout_width="57dp"
         android:layout_height="57dp"
         android:background="?selectableItemBackgroundBorderless"
@@ -128,7 +141,7 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.365"
@@ -136,7 +149,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/btn_bard2"
+        android:id="@+id/btn_spell_bard"
         android:layout_width="57dp"
         android:layout_height="57dp"
         android:background="?selectableItemBackgroundBorderless"
@@ -144,7 +157,7 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintHorizontal_bias="0.241"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.365"
@@ -152,7 +165,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/btn_wizard2"
+        android:id="@+id/btn_spell_wizard"
         android:layout_width="57dp"
         android:layout_height="57dp"
         android:background="?selectableItemBackgroundBorderless"
@@ -168,7 +181,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/btn_warlock2"
+        android:id="@+id/btn_spell_warlock"
         android:layout_width="57dp"
         android:layout_height="57dp"
         android:background="?selectableItemBackgroundBorderless"
@@ -181,6 +194,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.592"
         app:srcCompat="@drawable/class_logo_warlock"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/btn_spell_druid"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:cropToPadding="true"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.365"
+        app:srcCompat="@drawable/class_logo_druid"
         tools:ignore="MissingConstraints" />
 
     <TextView
