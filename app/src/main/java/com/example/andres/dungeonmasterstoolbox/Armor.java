@@ -1,6 +1,7 @@
 package com.example.andres.dungeonmasterstoolbox;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -9,12 +10,21 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class Armor extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawer;
+    TextView theArmor;
+    Button btn_back;
 
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +41,9 @@ public class Armor extends AppCompatActivity implements NavigationView.OnNavigat
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        initialize();
+        appendDatabaseItemsToList();
     }
 
     @Override
@@ -109,6 +122,45 @@ public class Armor extends AppCompatActivity implements NavigationView.OnNavigat
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    public void initialize(){
+        theArmor = findViewById(R.id.txtview_wiki_armorList);
+        theArmor.setMovementMethod(new ScrollingMovementMethod());
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
+    public void appendDatabaseItemsToList() {
+        DBHelper myDB = new DBHelper(this);
+
+        Cursor res = myDB.getAllArmors();
+        ArrayList<String> armorsList = new ArrayList<>();
+
+        if (res.getCount() == 0) {
+            Toast.makeText(this, "THERES BLLOODY NOTHING", Toast.LENGTH_SHORT).show();
+            return;
+        } else { //myDB.insertIntoEquipment("Club", "weapon", 2.0, "", "5 sp", "Simple Melee, DMG: 1d4 bludgeoning, Light");
+            while (res.moveToNext()) {
+                theArmor.append("Name: ");
+                theArmor.append(res.getString(1));
+                theArmor.append("\n\r");
+                theArmor.append("Weight: ");
+                theArmor.append("\n\r");
+                theArmor.append(res.getString(3));
+                theArmor.append("Cost: ");
+                theArmor.append(res.getString(5));
+                theArmor.append("\n\r");
+                theArmor.append("Properties: ");
+                theArmor.append(res.getString(6));
+                theArmor.append("\n\r");
+                theArmor.append("\n\r");
+                theArmor.append("\n\r");
+            }
+        }
     }
 }
 
