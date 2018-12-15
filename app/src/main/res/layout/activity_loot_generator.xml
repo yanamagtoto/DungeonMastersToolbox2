@@ -8,26 +8,26 @@
     android:background="@drawable/dndbg">
 
     <Button
-        android:id="@+id/btn_randomDrop"
+        android:id="@+id/btn_loot_generate"
         android:layout_width="134dp"
         android:layout_height="46dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#122f3c"
+        android:background="@color/colorPrimaryDark"
         android:fontFamily="@font/font_korrina_bold"
-        android:text="Random Drop"
+        android:text="Generate"
         android:textColor="@android:color/background_light"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_treasureHoard"
+        app:layout_constraintEnd_toStartOf="@+id/btn_loot_treasureHoard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.261" />
 
     <Button
-        android:id="@+id/btn_treasureHoard"
+        android:id="@+id/btn_loot_treasureHoard"
         android:layout_width="134dp"
         android:layout_height="46dp"
         android:layout_marginTop="8dp"
