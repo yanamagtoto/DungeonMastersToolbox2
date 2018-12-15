@@ -127,11 +127,6 @@ public class Armor extends AppCompatActivity implements NavigationView.OnNavigat
         theArmor = findViewById(R.id.txtview_wiki_armorList);
         theArmor.setMovementMethod(new ScrollingMovementMethod());
 
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                finish();
-            }
-        });
     }
 
     public void appendDatabaseItemsToList() {

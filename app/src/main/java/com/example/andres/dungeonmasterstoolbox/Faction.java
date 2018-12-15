@@ -18,7 +18,7 @@ public class Faction extends AppCompatActivity implements NavigationView.OnNavig
 
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wiki_factions); // !! --- IMPORTANT
+        //setContentView(R.layout.activity_wiki_factions); // !! --- IMPORTANT
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

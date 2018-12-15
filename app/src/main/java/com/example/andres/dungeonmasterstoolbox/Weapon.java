@@ -128,11 +128,7 @@ public class Weapon extends AppCompatActivity implements NavigationView.OnNaviga
         theWeapon = findViewById(R.id.txtview_weaponList);
         theWeapon.setMovementMethod(new ScrollingMovementMethod());
 
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
     }
 
     public void appendDatabaseItemsToList() {

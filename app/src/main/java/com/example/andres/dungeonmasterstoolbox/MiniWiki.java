@@ -44,7 +44,7 @@ public class MiniWiki extends AppCompatActivity implements NavigationView.OnNavi
         spells = (Button) findViewById(R.id.btn_wiki_spell);
         weapons = (Button) findViewById(R.id.btn_wiki_weapon);
         armors = (Button) findViewById(R.id.btn_wiki_armor);
-        factions = (Button) findViewById(R.id.btn_wiki_faction);
+        //factions = (Button) findViewById(R.id.btn_wiki_faction);
         classes = (Button) findViewById(R.id.btn_wiki_class);
 
 
@@ -71,7 +71,7 @@ public class MiniWiki extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(armor_activity);
             }
         });
-
+        /*
         factions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,6 +79,7 @@ public class MiniWiki extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(faction_activity);
             }
         });
+        */
 
         classes.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,7 +28,9 @@ public class Class extends AppCompatActivity implements NavigationView.OnNavigat
     DBHelper myDB;
 
     DrawerLayout drawer; //WHAT I DID IDK IF ITS CORRECT SAM :-(((
-    Button barbarian;
+    TextView theClass;
+    Button btn_back;
+    /*Button barbarian;
     Button bard;
     Button cleric;
     Button druid;
@@ -52,7 +55,7 @@ public class Class extends AppCompatActivity implements NavigationView.OnNavigat
     ImageView rogue_Image;
     ImageView sorcerer_Image;
     ImageView warlock_Image;
-    ImageView wizard_Image;
+    ImageView wizard_Image;*/
 
 
     protected void onCreate (Bundle savedInstanceState) {
@@ -71,7 +74,7 @@ public class Class extends AppCompatActivity implements NavigationView.OnNavigat
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        barbarian = (Button) findViewById(R.id.btn_barbarian);
+        /*barbarian = (Button) findViewById(R.id.btn_barbarian);
         bard = (Button) findViewById(R.id.btn_bard);
         cleric = (Button) findViewById(R.id.btn_cleric);
         druid = (Button) findViewById(R.id.btn_druid);
@@ -96,13 +99,13 @@ public class Class extends AppCompatActivity implements NavigationView.OnNavigat
         rogue_Image.setImageResource(R.drawable.class_logo_rogue);
         sorcerer_Image.setImageResource(R.drawable.class_logo_sorcerer);
         warlock_Image.setImageResource(R.drawable.class_logo_warlock);
-        wizard_Image.setImageResource(R.drawable.class_logo_wizard);
+        wizard_Image.setImageResource(R.drawable.class_logo_wizard);*/
 
         initialize();
-
+        appendDatabaseItemsToList();
     }
 
-    public void initialize () {
+    /* void initialize () {
         barbarian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,7 +134,7 @@ public class Class extends AppCompatActivity implements NavigationView.OnNavigat
         }
 
 
-    }
+    }*/
 
     @Override
     public void onBackPressed() {
@@ -209,5 +212,41 @@ public class Class extends AppCompatActivity implements NavigationView.OnNavigat
 
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void initialize(){
+        theClass = findViewById(R.id.txtview_wiki_classList);
+        theClass.setMovementMethod(new ScrollingMovementMethod());
+
+        btn_back = findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
+    public void appendDatabaseItemsToList() {
+        DBHelper myDB = new DBHelper(this);
+
+        Cursor res = myDB.getAllFromClasses();
+        ArrayList<String> classList = new ArrayList<>();
+
+        if (res.getCount() == 0) {
+            Toast.makeText(this, "THERES BLLOODY NOTHING", Toast.LENGTH_SHORT).show();
+            return;
+        } else { //myDB.insertIntoClasses("Paladin", "A holy warrior bound to a sacred oath.");
+            while (res.moveToNext()) {
+                theClass.append("Name: ");
+                theClass.append(res.getString(1));
+                theClass.append("\n\r");
+                theClass.append("Desc: ");
+                theClass.append("\n\r");
+                theClass.append(res.getString(2));
+                theClass.append("\n\r");
+                theClass.append("\n\r");
+                theClass.append("\n\r");
+            }
+        }
     }
 }
