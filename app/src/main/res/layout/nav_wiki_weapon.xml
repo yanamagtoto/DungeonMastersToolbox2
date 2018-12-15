@@ -28,6 +28,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.017" />
 
+    <TextView
+        android:id="@+id/txtview_weaponList"
+        android:layout_width="281dp"
+        android:layout_height="363dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorAccent"
+        android:scrollbars="vertical"
+        android:textAlignment="center"
+        android:textColor="@color/borderColor"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.378" />
+
     <Button
         android:id="@+id/btn_back"
         android:layout_width="wrap_content"
@@ -45,49 +65,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.982" />
-
-    <ScrollView
-        android:id="@+id/scrollview_wiki_weaponList"
-        android:layout_width="346dp"
-        android:layout_height="376dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_weight="1"
-        android:background="#fff2e6"
-        android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtview_label_spells2"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/tableLayout_wiki_weaponList"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:padding="10dip">
-
-            <TableRow
-                android:id="@+id/tableRow_saved_npc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                /></TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                /></TableRow>
-
-            <TableRow
-                android:id="@+id/tableRow3"
-                android:layout_width="wrap_content"
-                android:layout_height="74dp">
-                />
-            </TableRow>
-        </TableLayout>
-    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
