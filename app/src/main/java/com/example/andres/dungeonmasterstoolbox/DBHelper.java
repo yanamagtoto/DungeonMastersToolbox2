@@ -152,7 +152,7 @@ public class DBHelper extends SQLiteOpenHelper {
             //Venue
             db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE5_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,Name TEXT,Details TEXT)");
             //equipment
-            db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE6_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,Name TEXT,Type TEXT,Weight REAL, Description TEXT, Cost Integer, Properties TEXT)");
+            db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE6_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,Name TEXT,Type TEXT,Weight REAL, Description TEXT, Cost TEXT, Properties TEXT)");
             //classes
             db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE7_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT,Name TEXT,Description TEXT)");
             //spells

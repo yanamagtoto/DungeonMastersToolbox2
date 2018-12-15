@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -63,7 +64,7 @@ public class VenueGenerator extends AppCompatActivity implements NavigationView.
         saveVenue = findViewById(R.id.btn_venue_save);
         saveVenue.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                saveVenue();
             }
         });
 
@@ -78,6 +79,20 @@ public class VenueGenerator extends AppCompatActivity implements NavigationView.
         venueName.setText(generateVenueName(determiner));
 
         venueDetails.setText(generateStores(determiner));
+
+    }
+
+
+    public void saveVenue(){
+        DBHelper myDB = new DBHelper(this);
+
+        boolean isSuccess = myDB.insertIntoVenue(venueName.getText().toString(),venueDetails.getText().toString());
+
+        if(isSuccess){
+            Toast.makeText(this, "Sucessfully Saved!",
+                    Toast.LENGTH_LONG).show();
+        }
+
 
     }
 
