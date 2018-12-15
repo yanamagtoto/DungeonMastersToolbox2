@@ -1,6 +1,7 @@
 package com.example.andres.dungeonmasterstoolbox;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,11 +27,14 @@ public class NPCGenerator extends AppCompatActivity {
     Button generate;
     Button save;
     DrawerLayout drawer;
-
+    DBHelper mydb;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_npc_generator);
+
+        mydb = new DBHelper(this);
+
 
         inititialize();
 
@@ -53,9 +57,16 @@ public class NPCGenerator extends AppCompatActivity {
         save = findViewById(R.id.btn_npc_save);
         save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //add the database push code here
+                saveNPC(mydb);
+
             }
         });
+
+    }
+
+    public void saveNPC(DBHelper mydb){
+
+        //mydb.insertIntoNPC();
 
     }
 

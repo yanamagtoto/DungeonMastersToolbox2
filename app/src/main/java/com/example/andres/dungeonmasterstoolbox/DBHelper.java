@@ -8,10 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
-public class DBHelper {
 
-
-    public class DatabaseHelper extends SQLiteOpenHelper {
+public class DBHelper extends SQLiteOpenHelper {
 
         public static final String DATABASE_NAME = "DMToolbox.db";
 
@@ -87,7 +85,7 @@ public class DBHelper {
 
 
 
-        public DatabaseHelper(Context context) {
+        public DBHelper(Context context) {
             super(context, DATABASE_NAME, null, 1);
         }
 
@@ -403,4 +401,4 @@ public class DBHelper {
         }
         */
 
-}
+
