@@ -230,7 +230,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 return true;
         }
 
-        public boolean insertIntoEquipment(String name, String type, Double Weight, String Description, int cost, String Properties) {
+        public boolean insertIntoEquipment(String name, String type, Double Weight, String Description, String cost, String Properties) {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
             contentValues.put(TABLE6_COL2, name);
@@ -260,7 +260,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         public boolean insertIntoSpells(String name, int Level, String Description, String CastingTime, String Range, String Components, String Duration,
-        boolean isBardSpell, boolean isDruidSpell,  boolean isClericSpell,  boolean isWizardSpell,  boolean isSorcererSpell,  boolean isWarlockSpell) {
+        int isBardSpell,  int isDruidSpell,   int isClericSpell,  int isWizardSpell,   int isSorcererSpell,   int isWarlockSpell) {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
             contentValues.put(TABLE8_COL2, name);
