@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,6 +44,7 @@ public class LootGenerator extends AppCompatActivity implements NavigationView.O
         navigationView.setNavigationItemSelectedListener(this);
 
         initialize();
+
     }
 
     @Override
@@ -124,7 +126,9 @@ public class LootGenerator extends AppCompatActivity implements NavigationView.O
 
     public void initialize(){
         LootCR = findViewById(R.id.editText_lootCR);
+
         theLoot = findViewById(R.id.txtview_loot);
+        theLoot.setMovementMethod(new ScrollingMovementMethod());
 
         GenerateLoot = findViewById(R.id.btn_loot_generate);
         GenerateLoot.setOnClickListener(new View.OnClickListener() {
@@ -140,19 +144,25 @@ public class LootGenerator extends AppCompatActivity implements NavigationView.O
             Toast.makeText(this, "You didnt enter a challenge rating! How am I supposed to generate stuff? :(", Toast.LENGTH_SHORT).show();
             return;
         }else{
-            theLoot.setText("");
-
             int CR = Integer.parseInt(LootCR.getText().toString());
 
-            theLoot.append(generatePlatinum(CR));
-            theLoot.append("\n\r");
-            theLoot.append(generateGold(CR));
-            theLoot.append("\n\r");
-            theLoot.append(generateSilver(CR));
-            theLoot.append("\n\r");
-            theLoot.append(generateCopper(CR));
-            theLoot.append("\n\r");
-            theLoot.append(generateTreasure(CR));
+            if(CR > 20 || CR < 1){
+                Toast.makeText(this, "You Entered a challenge rating that is not within range! How am I supposed to generate stuff? :(", Toast.LENGTH_SHORT).show();
+                return;
+            }else{
+                theLoot.setText("");
+                theLoot.append(generatePlatinum(CR));
+                theLoot.append("\n\r");
+                theLoot.append(generateGold(CR));
+                theLoot.append("\n\r");
+                theLoot.append(generateSilver(CR));
+                theLoot.append("\n\r");
+                theLoot.append(generateCopper(CR));
+                theLoot.append("\n\r");
+                theLoot.append(generateTreasure(CR));
+            }
+
+
 
         }
 

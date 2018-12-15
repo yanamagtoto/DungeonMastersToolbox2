@@ -290,9 +290,10 @@ public class DBHelper extends SQLiteOpenHelper {
         /*
         HERE ARE ALL THE GET METHODS FOR THE DATABASE
          */
-        public Cursor getAllDataFromEncounters() {
+        public Cursor getAllDataFromEncounters(int cr) {
             SQLiteDatabase db = this.getWritableDatabase();
-            Cursor res = db.rawQuery("select * from " + TABLE_NAME, null);
+            Cursor res = db.rawQuery("select * from " + TABLE_NAME +  " where CR = " + cr ,  null);
+
             return res;
         }
 

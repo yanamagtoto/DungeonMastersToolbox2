@@ -121,6 +121,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="Be Kind to Players"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,23 +130,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.104" />
 
-    <Spinner
-        android:id="@+id/dropdown_ch_rating"
-        android:layout_width="113dp"
-        android:layout_height="30dp"
+    <EditText
+        android:id="@+id/editText_cr"
+        android:layout_width="110dp"
+        android:layout_height="39dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="CR range is 1-20"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintHorizontal_bias="0.802"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.208" />
+        app:layout_constraintVertical_bias="0.212" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtView_encounters"
         android:layout_width="309dp"
         android:layout_height="264dp"
         android:layout_marginStart="8dp"
