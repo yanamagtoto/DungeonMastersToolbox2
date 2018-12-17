@@ -195,7 +195,11 @@ public class MainActivity extends AppCompatActivity
         myDB.insertIntoSpells("Aganazzar's Scorcher",2,"A line of roaring flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 3d8 fire damage on a failed save, or half as much damage on a successful one. ","1 Action","30 ft","V, S, M (a red dragon’s scale)","Instantaneous",0,0,0,0,1,0);
         myDB.insertIntoSpells("Armor of Agathys",1," A protective magical force surrounds you, manifesting as a spectral frost that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 cold damage.  ","1 Action","Self","V, S, M (a cup of water)","1 hr",0,0,0,0,0,1);
 
-
-
+        myDB.insertIntoEncounters("Awakened Shrub",0,10);
+        myDB.insertIntoEncounters("Blood Hawk",1,25);
+        myDB.insertIntoEncounters("Aarakocra",1,50);
+        myDB.insertIntoEncounters("Ape",1,100);
+        myDB.insertIntoEncounters("Animated Armor",1,200);
+        myDB.insertIntoEncounters("Allosaurus",2,450);
         }
     }

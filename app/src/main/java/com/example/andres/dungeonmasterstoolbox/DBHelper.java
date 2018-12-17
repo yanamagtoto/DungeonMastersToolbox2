@@ -323,13 +323,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
         public Cursor getAllArmors(){
             SQLiteDatabase db = this.getWritableDatabase();
-            Cursor res = db.rawQuery("select * from " + TABLE6_NAME + " where Type = 'Armor'" , null);
+            Cursor res = db.rawQuery("select * from " + TABLE6_NAME + " where Type = 'armor'" , null);
             return res;
         }
 
         public Cursor getAllWeapons(){
             SQLiteDatabase db = this.getWritableDatabase();
-            Cursor res = db.rawQuery("select * from " + TABLE6_NAME + " where Type = 'Weapon'", null);
+            Cursor res = db.rawQuery("select * from " + TABLE6_NAME + " where Type = 'weapon'", null);
             return res;
         }
 
